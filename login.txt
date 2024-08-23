@@ -1,0 +1,19 @@
+Importar librería System.Data;
+----------------------------------
+
+EN BOTÓN INICIAR:
+
+DataTable dt = ((DataView)SqlDataSource1.Select(DataSourceSelectArguments.Empty)).Table;
+            if (dt.Rows.Count !=0)
+            {
+               
+                lblError.Visible = false;
+                Response.Redirect("Reporte.aspx");
+               
+            }
+            else
+            {
+                lblError.Visible = true;
+                txtUsuario.Text = "";
+                txtPassword.Text = "";
+            }
